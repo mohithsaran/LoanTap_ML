@@ -74,26 +74,45 @@ This case study will focus on the underwriting process behind Personal Loan only
 
  **Tradeoff Questions**:
     - How can we make sure that our model can detect real defaulters and there are less false positives? This is important as we can lose out on an opportunity to finance more individuals and earn interest on it. 
+    
         - By increasing the prediction threshold (e.g., from 0.5 to 0.7), only borrowers with a very high likelihood of default will be flagged as defaulters.
+        
         - Set stricter approval criteria for high-risk borrowers based on model predictions.     Offer secured loans or reduced credit limits to mitigate risk.
+        
         - Risk: High recall may result in rejecting creditworthy borrowers, leading to lost business.
+        
         - Benefit: Safeguards against NPAs, reducing long-term financial risks.
+        
     - Since NPA (non-performing asset) is a real problem in this industry, it’s important we play safe and shouldn’t disburse loans to anyone.
         - Combine precision and recall to find a balanced model performance.
+        
         - Use the ROC-AUC and Precision-Recall curves to identify optimal thresholds that balance both metrics.
+        
 **Additional Questions:**
     - What percentage of customers have fully paid their Loan Amount?
+    
       - `80.38%` has fully paid the loan
+      
     - Comment about the correlation between Loan Amount and Installment features.
+    
       -The correlation coefficient measures the strength and direction of the linear relationship between two variables. In this case, the correlation coefficient between 'loan_amnt' and 'installment' is quite high, approximately 0.95, indicating a strong positive linear relationship between these two variables.
+      
       - Loan Terms: Understanding the relationship between loan amount and installment payments is crucial for setting appropriate loan terms. Lenders can adjust loan terms such as interest rates and repayment periods based on the borrower's ability to handle installment payments associated with different loan amounts.
+      
       - Potential Multicollinearity: When building predictive models, it's essential to be cautious of multicollinearity between highly correlated predictor variables. Multicollinearity can lead to unstable estimates and difficulties in interpreting the model coefficients. Therefore, it might be necessary to address multicollinearity through techniques such as variable selection or regularization.
+      
     - The majority of people have home ownership as `Mortgage`
+    
     - People with grades ‘A’ are more likely to fully pay their loan. 
+    
       - `True`. **Grade 'A' borrowers demonstrate a significantly high likelihood of fully repaying their loans**, with True. Grade 'A' borrowers demonstrate a significantly high likelihood of fully repaying their loans, with approximately **93.71%** of loans being fully paid. 
+      
       - This suggests that borrowers with the **highest credit rating** are more inclined to fulfill their loan obligations successfully. of loans being fully paid. This suggests that borrowers with the highest credit rating are more inclined to fulfill their loan obligations successfully.
+      
     - Name the top 2 afforded job titles.
-      - The Most afforded job titles are Teachers & Managers.
+    
+    - The Most afforded job titles are Teachers & Managers.
+      
 
 - Thinking from a bank's perspective, which metric should our primary focus be on..
 1. ROC AUC
